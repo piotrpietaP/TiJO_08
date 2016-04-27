@@ -32,3 +32,27 @@ Feature: Sea of directives
     And I should see "Set sails!" message for "1" ship
     And I should not see message for "2" ship
 
+
+
+
+
+
+
+
+   Scenario: Add sunny to docks conditions
+     When I browse to the "/"
+     And I select option "sunny" in "docks.availableConditions"
+     And I click "docks.updateButton"
+     Then I should see "docks.sunnyImg"
+     And I select option "sunny" in "docks.availableConditions"
+     And I click "docks.updateButton"
+     Then I should see "docks.SunnyImg"
+
+  Scenario: Add windy to docks conditions
+    When I browse to the "/"
+    And I select option "windy" in "docks.availableConditions"
+    And I click "docks.updateButton"
+
+
+
+
