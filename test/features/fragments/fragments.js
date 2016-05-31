@@ -26,16 +26,21 @@ var fragments = function (text)
 {
     'use strict';
 
+
+
+
+
+    /* Example created by Piotr P. */
+
     var mapping = {
-        button: element,
-        type: element,
-        fifa: element,
-        rank: element,
-        team: element,
-        totalPoints: element
-
-
+        rank: element.bind(null, by.css('td:nth-of-type(1)')),
+        fifa: element.bind(null, by.css('.table')),
+        team: element.bind(null, by.css('td:nth-of-type(2)')),
+        type: element.bind(null, by.binding('fifa.type')),
+        totalPoints: element.bind(null, by.css('td:nth-of-type(3)')),
+        button: element.bind(null, by.css('.btn')),
     };
+
 
     return byString(mapping, text);
 };
